@@ -1,0 +1,128 @@
+.main-page{
+    display: flexbox;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    margin: 0;
+}
+
+.header{
+    position: sticky;
+    top : 0;
+    width: 100%;
+    height: 10vh;
+    background-color: blueviolet;
+    text-align: center;
+    margin: 0;
+    
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+.center-panel{
+    width: 70%;
+    /* height: 100%; */
+    background-color: rgb(226, 95, 43);
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction:column;
+    
+}
+
+.left-panel{
+    width: 30%;
+    /* height: 80%; */
+    background-color: rgb(43, 226, 58);
+    text-align: center;
+    margin: 0;
+    
+}
+
+
+.events-block {
+    border-radius: 25px;
+    background-color: #0a0a09;
+    padding: 15px;
+    width: 80%;   
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    color: aliceblue;
+    
+  }
+
+ .events-block-header{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+ }
+
+ .event-name{
+    float: left;
+    margin: 0;
+    width: fit-content;
+    text-align: left;  
+ }
+
+ .event-date{
+    float: right;
+    margin: 0;
+    width: fit-content;
+    text-align: right;
+  
+ }
+ 
+
+
+ .event-description{
+    margin-top: 20px;
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+   
+ }
+
+ .event-footer{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+ }
+
+ .event-attendees{
+    float: right;
+    margin: 0;
+    width: fit-content;
+    text-align: left;  
+ }
+
+.info-block{
+    display: flex;
+    flex-direction: column;
+}
+ .info-table{
+    text-align: left;
+    vertical-align:top; 
+ }
+
+ 
+
+ table tr td {
+    text-align: left;
+    vertical-align: top; 
+    /* border: 2px solid #ffffff; */
+ }
+
+ .register-button{
+    margin-top: 20px;
+    align-self: center;
+ }
