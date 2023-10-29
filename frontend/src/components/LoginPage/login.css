@@ -1,0 +1,79 @@
+.main-page{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+.left-panel{
+    background-image: url("https://images.pexels.com/photos/45842/clasped-hands-comfort-hands-people-45842.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    /* height: 100%; */
+    /* background-color: blueviolet; */
+    text-align: center;
+    margin: 0;
+    
+}
+
+.right-panel{
+    width: 30%;
+    /* height: 100%; */
+    background-color: rgb(124, 122, 122);
+    text-align: center;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 15%;
+    /* background: rgb(255, 0, 0); */
+    padding-bottom: 30px;
+    margin-left: 0;
+    
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px ;
+    font-size:x-large;
+    font-weight: bolder;   
+}
+
+.text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+input {
+    margin: 0 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    width: 70%;
+}
+
+.inputs{
+    padding: 10px;
+}
+
+button {
+    border: none;
+    background-color: #ff4800;;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    width: 70%;
+  }
