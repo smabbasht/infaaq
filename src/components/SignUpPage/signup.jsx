@@ -5,13 +5,16 @@ import './signup.css'
 import PropTypes from 'prop-types'
 
 const SignUp = (props) => {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-    const [name, setName] = useState('');
+    const [email, setEmail] = useState(''); // email
+    const [pass, setPass] = useState(''); // password
+    const [name, setName] = useState(''); // name
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // prevents the page from reloading on submit
+        //debug
+        console.log(name);
         console.log(email);
+        console.log(pass);
     };
     
     return (
@@ -26,7 +29,7 @@ const SignUp = (props) => {
                                 <h2>SignUp</h2>
                             </div> 
                         </div>
-                        <form>
+                        <form className="register-form" onSubmit={handleSubmit}> 
                             <div className="inputs">
                                 <label htmlFor="name"></label>
                                 <input value={name} name="name" onChange={(e) => setName(e.target.value)} id="name" placeholder="Full Name" />
@@ -41,7 +44,7 @@ const SignUp = (props) => {
                             </div>
                             <div className="sumbit-container">
                                 <div className="signup-submit">
-                                    <button type="button">SignUp</button>
+                                    <button type="submit">SignUp</button>
                                 </div>
                             </div>
                         </form>
