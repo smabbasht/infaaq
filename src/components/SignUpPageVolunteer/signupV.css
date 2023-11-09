@@ -35,7 +35,6 @@
     /* background: rgb(255, 0, 0); */
     padding-bottom: 30px;
     margin-left: 0;
-    
 }
 
 .header{
@@ -53,8 +52,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-
 input {
     margin: 0 0;
     padding: 1rem;
@@ -67,10 +64,9 @@ input {
     padding: 10px;
 }
 
-
 button {
     border: none;
-    background-color: #F99417;;
+    background-color: #ff4800;;
     padding: 20px;
     border-radius: 20px;
     cursor: pointer;
@@ -78,4 +74,3 @@ button {
     font-weight: bolder;
     width: 70%;
   }
-

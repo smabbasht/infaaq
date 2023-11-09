@@ -52,7 +52,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-input {
+.input {
     margin: 0 0;
     padding: 1rem;
     border: none;
@@ -60,8 +60,14 @@ input {
     width: 70%;
 }
 
+label{
+    padding: 0rem;
+}
+
 .inputs{
     padding: 10px;
+    /* text-align: left; */
+    
 }
 
 button {

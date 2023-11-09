@@ -1,35 +1,38 @@
 import { render } from "@testing-library/react";
 import React, { useState } from "react";
 import { Fragment } from "react";
-import "./login.css";
+import "./signupD.css";
 import PropTypes from "prop-types";
-import axios from "axios";
 
-const Login = (props) => {
-  const [email, setEmail] = useState(""); //email
-  const [pass, setPass] = useState(""); //password
+const SignUpD = (props) => {
+  const [email, setEmail] = useState(""); // email
+  const [pass, setPass] = useState(""); // password
+  const [name, setName] = useState(""); // name
 
   const handleSubmit = (e) => {
     e.preventDefault(); // prevents the page from reloading on submit
     //debug
+    console.log(name);
     console.log(email);
-    console.log(pass);
+    console.log(pass);  
+
     const userData = {
+      name : name,
       email: email,
       password: pass,
     };
 
-    
-    fetch("http://localhost:8000/users/api/users/", {
+    fetch("https://dummyjson.com/products/add", {
       method: "POST",
       body: JSON.stringify({
-        type: "login",
+        type: "signup",
         data: userData
       }),
     })
     .then(res => res.json())
     .then(console.log(userData));
-  };  
+    
+  };
 
   return (
     <Fragment>
@@ -39,10 +42,20 @@ const Login = (props) => {
           <div className="container">
             <div className="header">
               <div className="text">
-                <h2>Login</h2>
+                <h2>SignUp</h2>
               </div>
             </div>
-            <form className="login-form" onSubmit={handleSubmit}>
+            <form className="register-form" onSubmit={handleSubmit}>
+              <div className="inputs">
+                <label htmlFor="name"></label>
+                <input
+                  value={name}
+                  name="name"
+                  onChange={(e) => setName(e.target.value)}
+                  id="name"
+                  placeholder="Full Name"
+                />
+              </div>
               <div className="inputs">
                 <label htmlFor="email"></label>
                 <input
@@ -66,20 +79,20 @@ const Login = (props) => {
                 />
               </div>
               <div className="sumbit-container">
-                <div className="login-submit">
-                  <button type="submit">Login</button>
+                <div className="signup-submit">
+                  <button type="submit">SignUp</button>
                 </div>
               </div>
             </form>
             <div className="sumbit-container">
-              <div className="register-submit">
-                Don't have an account?
+              <div className="login-submit">
+                Already have an account?
                 <u
                   className="link-btn"
-                  onClick={() => props.onFormSwitch("register")}
+                  onClick={() => props.onFormSwitch("login")}
                 >
                   {" "}
-                  Register here
+                  Login here
                 </u>
               </div>
             </div>
@@ -90,4 +103,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default SignUpD;
