@@ -17,11 +17,12 @@ const SignUp = (props) => {
     //debug
     setRole(e.target.value)
     console.log(role);
-    if (role=="volunteer")
+    console.log(role==='volunteer')
+    console.log(role==='donor')
+    if (role==='volunteer')
     {
-      navigate('/volunteer');
-    }
-    else if (role=="donor")
+      navigate('/events'); }
+    else if (role==='donor')
     {
       navigate('/donor');
     }

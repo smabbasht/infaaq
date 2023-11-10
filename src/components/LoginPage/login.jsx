@@ -34,7 +34,7 @@ const Login = (props) => {
       if (response.ok) {
         // Set user role and details in local storage or context
         localStorage.setItem('user', JSON.stringify(data));
-        navigate('/events');
+        // navigate('/events');
       } else {
         // Handle errors, display messages
         console.error('Login failed:', data.message);
