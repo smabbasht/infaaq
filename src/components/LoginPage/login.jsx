@@ -4,8 +4,10 @@ import { Fragment } from "react";
 import "./login.css";
 import PropTypes from "prop-types";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Login = (props) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState(""); //email
   const [pass, setPass] = useState(""); //password
 
@@ -20,15 +22,28 @@ const Login = (props) => {
     };
 
     
-    fetch("http://localhost:8000/users/api/users/", {
-      method: "POST",
-      body: JSON.stringify({
-        type: "login",
-        data: userData
-      }),
-    })
-    .then(res => res.json())
-    .then(console.log(userData));
+    try {
+      const response = fetch('http://localhost:8001/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, pass }),
+      });
+      const data =  response.json();
+      if (response.ok) {
+        // Set user role and details in local storage or context
+        localStorage.setItem('user', JSON.stringify(data));
+        navigate('/events');
+      } else {
+        // Handle errors, display messages
+        console.error('Login failed:', data.message);
+      }
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
+  
+
   };  
 
   return (
@@ -76,7 +91,7 @@ const Login = (props) => {
                 Don't have an account?
                 <u
                   className="link-btn"
-                  onClick={() => props.onFormSwitch("register")}
+                  onClick={() => navigate('/register')}
                 >
                   {" "}
                   Register here

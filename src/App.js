@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { Routes, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+
 import  Login  from "./components/LoginPage/login";
 import SignUp from "./components/SignUpPage/signup";
 import SignUpD from "./components/SignUpPageDonor/signupD";
+import SignUpV from "./components/SignUpPageVolunteer/signupV";
+
 
 
 function App() {
@@ -16,12 +20,17 @@ function App() {
 
   return (
     <div className="App">
-      {
+   
+      {/* {
         currentForm == "login" ? <Login onFormSwitch={toggleForm} /> : <SignUp onFormSwitch={toggleForm} />
-        
-      
-      }
-    
+      } */}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="register" element={<SignUp />} />
+        <Route path="donor" element={<SignUpD />} />
+        <Route path="volunteer" element={<SignUpV />} />
+      </Routes>
+
     </div>
   );
 }

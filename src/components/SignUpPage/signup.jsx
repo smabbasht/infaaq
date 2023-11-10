@@ -3,8 +3,12 @@ import React, { useState } from "react";
 import { Fragment } from "react";
 import "./signup.css";
 import PropTypes from "prop-types";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const SignUp = (props) => {
+  const navigate = useNavigate();
   const [role, setRole] = useState(""); // role
 
 
@@ -15,16 +19,18 @@ const SignUp = (props) => {
     console.log(role);
     if (role=="volunteer")
     {
-      props.onFormSwitch("volunteer");
+      navigate('/volunteer');
     }
     else if (role=="donor")
     {
-      props.onFormSwitch("donor");
+      navigate('/volunteer');
     }
     else
     {
       alert("Do something");
     }
+    
+    
     
 
     // const userData = {
@@ -72,7 +78,7 @@ const SignUp = (props) => {
               </div>
               <div className="sumbit-container">
                 <div className="signup-submit">
-                  <button type="submit" >Proceed</button>
+                  <button type="submit">Proceed</button>
                 </div>
               </div>
             </form>
@@ -81,7 +87,8 @@ const SignUp = (props) => {
                 Already have an account?
                 <u
                   className="link-btn"
-                  onClick={() => props.onFormSwitch("login")}
+                  onClick={() => navigate('/')}
+                  
                 >
                   {" "}
                   Login here

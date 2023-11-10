@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { Fragment } from "react";
 import "./signupD.css";
 import PropTypes from "prop-types";
+import { useNavigate } from 'react-router-dom';
 
 const SignUpD = (props) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState(""); // email
   const [pass, setPass] = useState(""); // password
   const [name, setName] = useState(""); // name
@@ -42,7 +44,7 @@ const SignUpD = (props) => {
           <div className="container">
             <div className="header">
               <div className="text">
-                <h2>SignUp</h2>
+                <h2>SignUp as Donor</h2>
               </div>
             </div>
             <form className="register-form" onSubmit={handleSubmit}>
@@ -89,7 +91,7 @@ const SignUpD = (props) => {
                 Already have an account?
                 <u
                   className="link-btn"
-                  onClick={() => props.onFormSwitch("login")}
+                  onClick={()=> navigate('/')}
                 >
                   {" "}
                   Login here
