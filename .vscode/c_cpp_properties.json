@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/humble/include/**",
+        "/home/provalarous/Documents/MATLAB/Examples/R2022b/robotics/PerformCoSimulationBetweenSimulinkAndGazeboExample/GazeboPlugin/include/**",
+        "/home/provalarous/Documents/MATLAB/Examples/R2023b/robotics/PerformCoSimulationBetweenSimulinkAndGazeboExample/GazeboPlugin/include/**",
+        "/home/provalarous/src/GazeboPlugin/include/**",
+        "/home/provalarous/user/GazeboPlugin/FruitPickingPkg/include/**",
+        "/home/provalarous/user/GazeboPlugin/GazeboPlugin/include/**",
+        "/home/provalarous/user/src/GazeboPlugin/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

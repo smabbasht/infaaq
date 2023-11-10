@@ -83,7 +83,7 @@ const EventsDashboard = () => {
 //   selectedItem.category = null;
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("http://localhost:8001/events/api")
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
@@ -94,6 +94,8 @@ const EventsDashboard = () => {
         setLoading(false);
       });
   }, []);
+
+  console.log(items.title);
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
@@ -113,8 +115,8 @@ const EventsDashboard = () => {
               <div onClick={() => handleItemClick(item)}>
                 {EventsBlock(
                   item.title,
-                  item.description,
-                  item.category,
+                  item.desc,
+                  item.n_attandees,
                   item.id
                 )}
                 {/* <button onClick={() => handleItemClick(item)}>Button</button> */}
@@ -127,7 +129,7 @@ const EventsDashboard = () => {
           <div className="left-panel">
             {selectedItem ? (
             <div>
-                {InfoBlock(selectedItem.title,selectedItem.category,selectedItem.price,selectedItem.id)}
+                {InfoBlock(selectedItem.title,selectedItem.date,selectedItem.location,selectedItem.contact)}
             </div>
             ) : (<p>More Info shows here</p>)}
           </div>

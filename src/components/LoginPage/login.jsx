@@ -23,7 +23,7 @@ const Login = (props) => {
 
     
     try {
-      const response = fetch('http://localhost:8001/users', {
+      const response = fetch('http://localhost:8001/users/api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

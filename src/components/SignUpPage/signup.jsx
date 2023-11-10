@@ -23,7 +23,7 @@ const SignUp = (props) => {
     }
     else if (role=="donor")
     {
-      navigate('/volunteer');
+      navigate('/donor');
     }
     else
     {

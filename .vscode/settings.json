@@ -1,0 +1,20 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/provalarous/robot_prototype_ws/install/prototype/lib/python3.10/site-packages",
+        "/home/provalarous/robot_prototype_ws/install/package1/lib/python3.10/site-packages",
+        "/home/provalarous/ros2_ws/build/my_robot_controller",
+        "/home/provalarous/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/home/provalarous/ros2/install/autonomous_tb3/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/provalarous/robot_prototype_ws/install/prototype/lib/python3.10/site-packages",
+        "/home/provalarous/robot_prototype_ws/install/package1/lib/python3.10/site-packages",
+        "/home/provalarous/ros2_ws/build/my_robot_controller",
+        "/home/provalarous/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/home/provalarous/ros2/install/autonomous_tb3/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
