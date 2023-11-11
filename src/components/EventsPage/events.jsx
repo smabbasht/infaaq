@@ -83,7 +83,7 @@ const EventsDashboard = () => {
 //   selectedItem.category = null;
 
   useEffect(() => {
-    fetch("http://localhost:8001/events/api")
+    fetch("http://localhost:8000/events/api")
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
@@ -126,7 +126,7 @@ const EventsDashboard = () => {
           </div>
 
 
-          <div className="left-panel">
+          <div className="right-panel">
             {selectedItem ? (
             <div>
                 {InfoBlock(selectedItem.title,selectedItem.date,selectedItem.location,selectedItem.contact)}

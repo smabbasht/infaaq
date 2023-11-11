@@ -7,6 +7,7 @@ import  Login  from "./components/LoginPage/login";
 import SignUp from "./components/SignUpPage/signup";
 import SignUpD from "./components/SignUpPageDonor/signupD";
 import SignUpV from "./components/SignUpPageVolunteer/signupV";
+import EventsDashboard from "./components/EventsPage/events.jsx";
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="register" element={<SignUp />} />
         <Route path="donor" element={<SignUpD />} />
         <Route path="volunteer" element={<SignUpV />} />
+        <Route path="events" element={<EventsDashboard />} />
       </Routes>
 
     </div>

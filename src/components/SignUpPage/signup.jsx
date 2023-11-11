@@ -21,7 +21,7 @@ const SignUp = (props) => {
     console.log(role==='donor')
     if (role==='volunteer')
     {
-      navigate('/events'); }
+      navigate('/volunteer'); }
     else if (role==='donor')
     {
       navigate('/donor');

@@ -11,40 +11,34 @@ const Login = (props) => {
   const [email, setEmail] = useState(""); //email
   const [pass, setPass] = useState(""); //password
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // prevents the page from reloading on submit
-    //debug
-    console.log(email);
-    console.log(pass);
-    const userData = {
-      email: email,
-      password: pass,
-    };
-
-    
-    try {
-      const response = fetch('http://localhost:8001/users/api', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, pass }),
-      });
-      const data =  response.json();
-      if (response.ok) {
-        // Set user role and details in local storage or context
-        localStorage.setItem('user', JSON.stringify(data));
-        // navigate('/events');
-      } else {
-        // Handle errors, display messages
-        console.error('Login failed:', data.message);
-      }
-    } catch (error) {
-      console.error('There was an error!', error);
+    const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch("http://localhost:8000/users/login");
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
     }
-  
+    const userData = await response.json();
 
-  };  
+    const loginIsValid = userData.find(
+      (user) => user.email === email && user.password === pass
+    );
+
+    if (loginIsValid) {
+      // Authentication successful, perform actions like setting up sessions, etc.
+      console.log('Login successful!');
+      // Redirect the user to a new page upon successful login
+      navigate('/events');
+    } else {
+      // Handle authentication failure, incorrect credentials
+      console.error('Login failed. Incorrect email or password.');
+    }
+  } catch (error) {
+    // Handle fetch or other errors
+    console.error('There was an error!', error);
+  }
+};
+
 
   return (
     <Fragment>
@@ -64,7 +58,7 @@ const Login = (props) => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   type="email"
-                  placeholder="youremail@gmail.com"
+                  placeholder="email@host.com"
                   id="email"
                   name="email"
                 />

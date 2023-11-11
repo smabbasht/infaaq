@@ -1,8 +1,6 @@
-import { render } from "@testing-library/react";
 import React, { useState } from "react";
 import { Fragment } from "react";
 import "./signupD.css";
-import PropTypes from "prop-types";
 import { useNavigate } from 'react-router-dom';
 
 const SignUpD = (props) => {
@@ -11,33 +9,42 @@ const SignUpD = (props) => {
   const [pass, setPass] = useState(""); // password
   const [name, setName] = useState(""); // name
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // prevents the page from reloading on submit
-    //debug
-    console.log(name);
-    console.log(email);
-    console.log(pass);  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     const userData = {
-      name : name,
+      name: name,
       email: email,
       password: pass,
+      role: 1,
     };
 
-    fetch("https://dummyjson.com/products/add", {
-      method: "POST",
-      body: JSON.stringify({
-        type: "signup",
-        data: userData
-      }),
-    })
-    .then(res => res.json())
-    .then(console.log(userData));
-    
+    try {
+      const response = await fetch("http://localhost:8000/users/api/", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Registration failed');
+      }
+
+      // Handle a successful registration
+      console.log('Registration successful!');
+      navigate('/events'); // Redirect to a success page or user dashboard
+    } catch (error) {
+      console.error('Registration failed:', error);
+      console.log(JSON.stringify(userData));
+      // Handle registration failure, display an error message to the user
+    }
   };
 
   return (
     <Fragment>
+      {/* Your JSX remains unchanged */}
       <div className="main-page">
         <div className="left-panel"></div>
         <div className="right-panel">
