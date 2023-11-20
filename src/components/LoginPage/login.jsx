@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React, { useState } from "react";
 import { Fragment } from "react";
-import "./login.css";
+// import "./login.css";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
@@ -42,6 +42,14 @@ const Login = (props) => {
 
   return (
     <Fragment>
+      {/* <!-- Latest compiled and minified CSS --> */}
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+
+      {/* <!-- jQuery library --> */}
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+      {/* <!-- Latest compiled JavaScript --> */}
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <div className="main-page">
         <div className="left-panel"></div>
         <div className="right-panel">

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
 import "./events.css";
 import PropTypes from "prop-types";
+import { useNavigate } from 'react-router-dom';
 
 const EventsBlock = (
   name,
@@ -41,9 +42,6 @@ const InfoBlock = (name, date, location, contact) => {
 
   return (
     <Fragment>
-        <div className="new-button">
-        <button type="button">Create a new post</button>
-        </div>
       <div className="events-block">
         <div className="info-table">
           <table>
@@ -64,9 +62,6 @@ const InfoBlock = (name, date, location, contact) => {
               <td>{contact}</td>
             </tr>
           </table>
-          <div className="register-button">
-            <button type="button">Register</button>
-          </div>
         </div>
       </div>
     </Fragment>
@@ -74,16 +69,17 @@ const InfoBlock = (name, date, location, contact) => {
 };
 
 const EventsDashboard = () => {
+  const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [loading, setLoading] = useState(true);
 
-//   selectedItem.title = null;
-//   selectedItem.description = null;
-//   selectedItem.category = null;
+  //   selectedItem.title = null;
+  //   selectedItem.description = null;
+  //   selectedItem.category = null;
 
   useEffect(() => {
-    fetch("http://localhost:8000/events/api")
+    fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
@@ -107,31 +103,152 @@ const EventsDashboard = () => {
       <div className="main-page">
         <div className="header">
           <div className="title-name"></div>
-          <div className="nav-bar"></div>
+          <div className="nav-bar">
+            <nav
+              className="navbar navbar-expand-lg"
+              style={{ backgroundColor: "#595959" }}
+            >
+              <div className="container-fluid">
+                <a className="navbar-brand" href="#">
+                  I N F A A Q
+                </a>
+                <button
+                  className="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+                <div
+                  className="collapse navbar-collapse"
+                  id="navbarSupportedContent"
+                >
+                  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li className="nav-item">
+                      <a
+                        className="nav-link active"
+                        aria-current="page"
+                        href="#"
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" href="#">
+                        Volunteer
+                      </a>
+                    </li>
+                    <li className="nav-item dropdown">
+                      <a
+                        className="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Profile
+                      </a>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Settings
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Profile Info
+                          </a>
+                        </li>
+                        <li>
+                          <hr className="dropdown-divider" />
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="/">
+                            LogOut
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
         </div>
         <div className="body">
           <div className="center-panel">
+            <button type="button" onClick={() => navigate("/eventpost")}>
+              Post an Event
+            </button>
+
             {items.map((item) => (
-              <div onClick={() => handleItemClick(item)}>
-                {EventsBlock(
-                  item.title,
-                  item.desc,
-                  item.n_attandees,
-                  item.id
-                )}
+              <div className="events-block">
+                {EventsBlock(item.title, item.desc, item.n_attandees, item.id)}
                 {/* <button onClick={() => handleItemClick(item)}>Button</button> */}
+
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  onClick={() => handleItemClick(item)}
+                >
+                  View Details
+                </button>
               </div>
             ))}
-
           </div>
 
-
-          <div className="right-panel">
+          <div>
             {selectedItem ? (
-            <div>
-                {InfoBlock(selectedItem.title,selectedItem.date,selectedItem.location,selectedItem.contact)}
-            </div>
-            ) : (<p>More Info shows here</p>)}
+              <div>
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          <b>Event Details</b>
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        {InfoBlock(
+                          selectedItem.title,
+                          selectedItem.date,
+                          selectedItem.location,
+                          selectedItem.contact
+                        )}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">
+                          Donate
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Volunteer
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <p>Copyright team Infaaq</p>
+            )}
           </div>
         </div>
       </div>
