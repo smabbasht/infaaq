@@ -65,7 +65,7 @@ function Places() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("http://localhost:8000/events/api/")
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
@@ -96,10 +96,10 @@ function Places() {
           {/* <Grid item xs={12} sm={6} lg={3}> */}
             {items.map((item) => (
               <Grid item xs={12} sm={6} lg={3}>
-                {EventCard(item.title, item.description, item.price, item.image)}
+                {EventCard(item.title, item.description, item.date, item.image)}
               </Grid>
             ))}
-            <TransparentBlogCard
+            {/* <TransparentBlogCard
               image={post1}
               title="Rover raised $65 million"
               description="Finding temporary housing for your dog should be as easy as renting an Airbnb. That’s the idea behind Rover ..."
@@ -109,7 +109,7 @@ function Places() {
                 color: "info",
                 label: "read more",
               }}
-            />
+            /> */}
           </Grid>
         {/* </Grid> */}
       </Container>
