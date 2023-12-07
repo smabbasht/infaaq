@@ -56,7 +56,7 @@ function Places() {
               description="Finding temporary housing for your dog should be as easy as renting an Airbnb. That’s the idea behind Rover ..."
               action={{
                 type: "internal",
-                route: "/pages/blogs/author",
+                route: "/pages/landing-pages/show-event",
                 color: "info",
                 label: "read more",
               }}
