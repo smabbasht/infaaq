@@ -53,11 +53,44 @@ function SignUpBasic() {
 
   // const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(email);
+  //   console.log(pass);
+  //   console.log(name);
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email);
-    console.log(pass);
-    console.log(name);
+
+    const userData = {
+      name: name,
+      email: email,
+      password: pass,
+      role: 1,
+    };
+
+    try {
+      const response = await fetch("http://localhost:8000/users/api/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Registration failed");
+      }
+
+      // Handle a successful registration
+      console.log("Registration successful!");
+      navigate("/events"); // Redirect to a success page or user dashboard
+    } catch (error) {
+      console.error("Registration failed:", error);
+      console.log(JSON.stringify(userData));
+      // Handle registration failure, display an error message to the user
+    }
   };
 
   return (

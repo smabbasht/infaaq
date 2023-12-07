@@ -19,8 +19,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // @mui material components
-import Card from "@mui/material/Card";
-import Switch from "@mui/material/Switch";
+import Card from "@mui/material/Card"; import Switch from "@mui/material/Switch";
 import Grid from "@mui/material/Grid";
 import MuiLink from "@mui/material/Link";
 
@@ -53,12 +52,41 @@ function SignInBasic() {
   const [pass, setPass] = useState(""); //password
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+  
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch("http://localhost:8000/users/login");
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const userData = await response.json();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
-    console.log(pass);
-  };
+    const loginIsValid = userData.find(
+      (user) => user.email === email && user.password === pass
+    );
+
+    if (loginIsValid) {
+      // Authentication successful, perform actions like setting up sessions, etc.
+      console.log('Login successful!');
+      // Redirect the user to a new page upon successful login
+      navigate('/events');
+    } else {
+      // Handle authentication failure, incorrect credentials
+      console.error('Login failed. Incorrect email or password.');
+    }
+  } catch (error) {
+    // Handle fetch or other errors
+    console.error('There was an error!', error);
+  }
+};
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(email);
+  //   console.log(pass);
+  // };
 
   return (
     <>
