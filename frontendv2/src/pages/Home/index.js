@@ -86,7 +86,16 @@ function Home() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Free & Open Volunteering Service Platform. Helping you help over 1M lives.
+              Free & Open Volunteering Service Platform.
+            </MKTypography>
+            <MKTypography
+              variant="body1"
+              color="white"
+              textAlign="center"
+              px={{ xs: 6, lg: 12 }}
+              mt={1}
+            >
+              Helping you help over 1M lives.
             </MKTypography>
           </Grid>
         </Container>

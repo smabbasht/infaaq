@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // Material Kit 2 React pages
-import Dashboard from "pages/LandingPages/Dashboard"
+import Dashboard from "pages/LandingPages/Dashboard";
 
 export default function DashboardPage() {
   return <Dashboard />;
