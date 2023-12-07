@@ -29,15 +29,15 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 // Presentation page sections
-import Counters from "pages/Presentation/sections/Counters";
-import Information from "pages/Presentation/sections/Information";
-import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
-import Pages from "pages/Presentation/sections/Pages";
-import Testimonials from "pages/Presentation/sections/Testimonials";
-import Download from "pages/Presentation/sections/Download";
+import Counters from "pages/Home/sections/Counters";
+import Information from "pages/Home/sections/Information";
+import DesignBlocks from "pages/Home/sections/DesignBlocks";
+import Pages from "pages/Home/sections/Pages";
+import Testimonials from "pages/Home/sections/Testimonials";
+import Download from "pages/Home/sections/Download";
 
-// Presentation page components
-import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
+// Home page components
+import BuiltByDevelopers from "pages/Home/components/BuiltByDevelopers";
 
 // Routes
 import routes from "routes";
@@ -46,17 +46,11 @@ import footerRoutes from "footer.routes";
 // Images
 import bgImage from "assets/images/bg-presentation.jpg";
 
-function Presentation() {
+function Home() {
   return (
     <>
       <DefaultNavbar
         routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
-          color: "info",
-        }}
         sticky
       />
       <MKBox
@@ -83,7 +77,7 @@ function Presentation() {
                 },
               })}
             >
-              Material Kit 2 React{" "}
+              I  {" "}N  {" "}F {" "} A  {" "}A  {" "}Q{" "}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -92,8 +86,7 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Free & Open Source Web UI Kit built over ReactJS &amp; MUI. Join over 1.6 million
-              developers around the world.
+              Free & Open Volunteering Service Platform. Helping you help over 1M lives.
             </MKTypography>
           </Grid>
         </Container>
@@ -109,14 +102,14 @@ function Presentation() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <Counters />
+        {/* <Counters /> */}
         <Information />
-        <DesignBlocks />
-        <Pages />
-        <Container sx={{ mt: 6 }}>
+        {/* <DesignBlocks /> */}
+        {/* <Pages /> */}
+        {/* <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
-        </Container>
-        <Container>
+        </Container> */}
+        {/* <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
@@ -159,10 +152,10 @@ function Presentation() {
               />
             </Grid>
           </Grid>
-        </Container>
+        </Container> */}
         <Testimonials />
-        <Download />
-        <MKBox pt={18} pb={6}>
+        {/* <Download /> */}
+        <MKBox>
           <Container>
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
@@ -170,7 +163,7 @@ function Presentation() {
                   Thank you for your support!
                 </MKTypography>
                 <MKTypography variant="body1" color="text">
-                  We deliver the best web products
+                  Lets us bring the best of humanity
                 </MKTypography>
               </Grid>
               <Grid
@@ -222,4 +215,4 @@ function Presentation() {
   );
 }
 
-export default Presentation;
+export default Home;

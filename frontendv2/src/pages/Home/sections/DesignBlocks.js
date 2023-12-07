@@ -25,11 +25,11 @@ import MKBox from "components/MKBox";
 import MKBadge from "components/MKBadge";
 import MKTypography from "components/MKTypography";
 
-// Presentation page components
-import ExampleCard from "pages/Presentation/components/ExampleCard";
+// Home page components
+import ExampleCard from "pages/Home/components/ExampleCard";
 
 // Data
-import data from "pages/Presentation/sections/data/designBlocksData";
+import data from "pages/Home/sections/data/designBlocksData";
 
 function DesignBlocks() {
   const renderData = data.map(({ title, description, items }) => (

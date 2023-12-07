@@ -23,10 +23,8 @@ import MKBox from "components/MKBox";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Author page sections
-import Profile from "pages/LandingPages/Author/sections/Profile";
-// import Posts from "pages/LandingPages/Author/sections/Posts";
-import Contact from "pages/LandingPages/Author/sections/Contact";
-import Footer from "pages/LandingPages/Author/sections/Footer";
+import Contact from "pages/LandingPages/ShowEvent/sections/Contact";
+import Footer from "pages/LandingPages/ShowEvent/sections/Footer";
 
 // Routes
 import routes from "routes";
@@ -34,7 +32,7 @@ import routes from "routes";
 // Images
 import bgImage from "assets/images/city-profile.jpg";
 
-function Author() {
+function ShowEvent() {
   return (
     <>
       <DefaultNavbar
@@ -79,4 +77,4 @@ function Author() {
   );
 }
 
-export default Author;
+export default ShowEvent;

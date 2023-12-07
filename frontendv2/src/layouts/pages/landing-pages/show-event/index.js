@@ -14,8 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // Material Kit 2 React pages
-import Author from "pages/LandingPages/Author";
+import ShowEvent from "pages/LandingPages/ShowEvent";
 
-export default function AuthorPage() {
-  return <Author />;
+export default function ShowEventPage() {
+  return <ShowEvent />;
 }
