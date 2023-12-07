@@ -26,7 +26,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "assets/theme";
 import Home from "layouts/pages/home";
 
-
 // Material Kit 2 React routes
 import routes from "routes";
 

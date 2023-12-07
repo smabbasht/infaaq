@@ -39,9 +39,9 @@ function Information() {
           justifyContent="center"
           sx={{ mx: "auto", textAlign: "center" }}
         >
-          <MKTypography variant="h2">Trusted by over</MKTypography>
+          <MKTypography variant="h2">Trusted by over </MKTypography>
           <MKTypography variant="h2" color="info" textGradient mb={2}>
-            1,679,477+ Donors
+             1,679,477+ Donors
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 8 }}>
