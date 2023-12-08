@@ -27,7 +27,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # The port number where your React app runs
+    "http://localhost:3000",
+    # "http://localhost:3001",  # The port number where your React app runs
 ]
 
 
