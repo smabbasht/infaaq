@@ -90,7 +90,7 @@ function Places() {
         <Grid container spacing={3}>
             {items.map((item) => (
               <Grid item xs={12} sm={6} lg={3}>
-                {EventCard(item.title, item.description, item.date, item.image)}
+                {EventCard(item.title, item.desc, item.date, item.image)}
               </Grid>
             ))}
           </Grid>

@@ -22,8 +22,10 @@ import Divider from "@mui/material/Divider";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
+
 // Material Kit 2 React examples
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
+import MKButton from "components/MKButton";
 
 
 
@@ -43,7 +45,11 @@ function Information() {
           <MKTypography variant="h2" color="info" textGradient mb={2}>
              1,679,477+ Donors
           </MKTypography>
+          
         </Grid>
+        <MKButton variant="gradient" color="info" fullWidth >
+            Sign Up
+        </MKButton>
         <Grid container spacing={3} sx={{ mt: 8 }}>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
