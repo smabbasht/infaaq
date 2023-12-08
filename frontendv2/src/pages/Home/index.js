@@ -108,7 +108,7 @@ function Home() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <Information />
+        
 
         <Testimonials />
         <MKBox>
