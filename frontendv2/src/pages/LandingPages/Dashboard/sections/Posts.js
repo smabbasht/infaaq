@@ -52,7 +52,7 @@ const EventCard = (
         // date={date}
         action={{
           type: "internal",
-          route: "/pages/blogs/author",
+          route: "/pages/blogs/author/pages/landing-pages/show-event",
           color: "info",
           label: "read more",
         }}
@@ -87,31 +87,13 @@ function Places() {
             Events Happening
           </MKTypography>
         </Grid>
-        {/* <Grid container item xs={12}>
-                <MKButton variant="gradient" color="info" sx={{ height: "100%" }}>
-                  Subscribe
-                </MKButton>
-        </Grid> */}
         <Grid container spacing={3}>
-          {/* <Grid item xs={12} sm={6} lg={3}> */}
             {items.map((item) => (
               <Grid item xs={12} sm={6} lg={3}>
                 {EventCard(item.title, item.description, item.date, item.image)}
               </Grid>
             ))}
-            {/* <TransparentBlogCard
-              image={post1}
-              title="Rover raised $65 million"
-              description="Finding temporary housing for your dog should be as easy as renting an Airbnb. That’s the idea behind Rover ..."
-              action={{
-                type: "internal",
-                route: "/pages/landing-pages/show-event",
-                color: "info",
-                label: "read more",
-              }}
-            /> */}
           </Grid>
-        {/* </Grid> */}
       </Container>
     </MKBox>
   );
