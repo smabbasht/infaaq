@@ -40,15 +40,15 @@ const EventCard = (
   date,
   image //props: name, description, date
 ) => {
-  const title_crop = title.slice(0, 10);
-  const desc = description.slice(0, 50);
+  // const title_crop = title.slice(0, 10);
+  // const desc = description.slice(0, 50);
 
   return (
     
       <TransparentBlogCard
         image={image}
-        title={title_crop}
-        description={desc}
+        title={title}
+        description={description}
         // date={date}
         action={{
           type: "internal",
