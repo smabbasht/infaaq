@@ -26,10 +26,11 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 React examples
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 import MKButton from "components/MKButton";
-
+import { useNavigate } from "react-router-dom";
 
 
 function Information() {
+  const navigate = useNavigate();
   return (
     <MKBox component="section" py={12}>
       <Container>
@@ -47,7 +48,7 @@ function Information() {
           </MKTypography>
           
         </Grid>
-        <MKButton variant="gradient" color="info" fullWidth >
+        <MKButton variant="gradient" color="info" fullWidth onClick={() => navigate("/pages/authentication/sign-up")}>
             Sign Up
         </MKButton>
         <Grid container spacing={3} sx={{ mt: 8 }}>
